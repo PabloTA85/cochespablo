@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Coches de <?php echo htmlspecialchars($marca); ?></title>
+</head>
+<body>
+    <h1>Coches de <?php echo htmlspecialchars($marca); ?></h1>
+    
+    <?php if (isset($_SESSION['mensaje'])): ?>
+        <div style="color: green;">
+            <?php echo htmlspecialchars($_SESSION['mensaje']); ?>
+            <?php unset($_SESSION['mensaje']); // Limpiar el mensaje después de mostrar ?>
+        </div>
+    <?php endif; ?>
+    
+    <ul>
+        <?php if (count($coche_listado) > 0): ?>
+            <?php foreach ($coche_listado as $coche): ?>
+                <li>
+                    <?php echo htmlspecialchars($coche); ?>
+                    <a href="comprar.php?coche=<?php echo urlencode($coche); ?>">Comprar</a>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <li>No hay coches disponibles para esta marca.</li>
+        <?php endif; ?>
+    </ul>
+    <p><a href="marcas.php">Volver a marcas</a></p>
+</body>
+</html>
+
+

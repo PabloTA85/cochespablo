@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito</title>
+</head>
+<body>
+    <h1>Tu Carrito</h1>
+    <ul>
+        <?php if (count($carrito) > 0): ?>
+            <?php foreach ($carrito as $index => $coche): ?>
+                <li>
+                    <?php echo htmlspecialchars($coche); ?>
+                    <form action="eliminar.php" method="post" style="display:inline;">
+                        <input type="hidden" name="index" value="<?php echo $index; ?>">
+                        <input type="submit" value="Eliminar">
+                    </form>
+                </li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <li>El carrito está vacío.</li>
+        <?php endif; ?>
+    </ul>
+    <p><a href="marcas.php">Volver a marcas</a></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

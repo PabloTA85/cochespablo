@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Marcas de Coches</title>
+</head>
+<body>
+    <h1>Marcas de Coches</h1>
+    <ul>
+        <?php foreach ($marcas as $marca): ?>
+            <li>
+                <?php echo htmlspecialchars($marca); ?>
+                <a href="coches.php?marca=<?php echo urlencode($marca); ?>">Ver coches</a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    <p><a href="carrito.php">Ver carrito</a></p>
+    <p><a href="logout.php">Cerrar sesión</a></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
